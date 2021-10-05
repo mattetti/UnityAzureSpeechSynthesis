@@ -33,3 +33,16 @@ To access the inspector panel, you have to click on the button manager which you
 The inspector shows the AudioGenButton script with its public members. The Subscriber key and region can be set there.
 
 Note that an Audio Source is passed to the script and the provided audio source uses a mixer you can customize (uneeded for this demo).
+
+
+## How the code works
+
+The logic is pretty straightforward
+
+1. Our script adds a click event handler for the UI button (in the `Start()` function)
+2. when the button is pressed, `OnButtonPressed()` is called, which sets up the configuration and caches it (this snippet should really be moved to `Start()`)
+3. The configuration sets the path we want the Azure tts Speech API to use when generating the audio file
+4. We trigger the text generation and wait for it to be done (an audio file is created in the user's asset folder)
+5. if everything went well, the file is loaded in an audio clip (via the custom async `GetAudioClip` function)
+6. the audiosource is stopped and the new clip is played at full volume.
+7. We also start a coroutine (code executed in parallel) to reset the button text after 4s)
