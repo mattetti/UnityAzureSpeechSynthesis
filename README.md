@@ -18,8 +18,18 @@ https://docs.microsoft.com/en-us/learn/modules/create-language-translator-mixed-
 
 ## Available languages and options
 
+The tts settings can be configured by modifying the config opjects in the script. Here is a list of supported languages and voices:
 https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support
+
+TTS concepts and options are explained here: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/index-text-to-speech 
 
 ## Demo setup (Azure key)
 
 Make sure to set your Azure Speech Resource Key in the Script attributes.
+
+![Screenshot 2021-10-05 124007](https://user-images.githubusercontent.com/113/136091702-ff381102-e73d-43ee-9fb6-c0d4425b2e34.png)
+
+To access the inspector panel, you have to click on the button manager which you can find in the Hierarchy pane shown to your left.
+The inspector shows the AudioGenButton script with its public members. The Subscriber key and region can be set there.
+
+Note that an Audio Source is passed to the script and the provided audio source uses a mixer you can customize (uneeded for this demo).
